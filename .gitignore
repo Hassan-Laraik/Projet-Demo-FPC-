@@ -1,0 +1,9 @@
+lib/
+modules/
+*.bak
+*.ppu
+*.o
+*.compiled
+backup/
+lib/
+

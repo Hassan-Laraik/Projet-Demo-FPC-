@@ -1,0 +1,54 @@
+object FrmPrincipale: TFrmPrincipale
+  Left = 119
+  Height = 482
+  Top = 201
+  Width = 960
+  Caption = 'FrmPrincipale'
+  ClientHeight = 482
+  ClientWidth = 960
+  LCLVersion = '3.2.0.0'
+  object PnlEntetet: TPanel
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 960
+    Align = alTop
+    TabOrder = 0
+  end
+  object PnlMenu: TPanel
+    Left = 0
+    Height = 382
+    Top = 50
+    Width = 170
+    Align = alLeft
+    ClientHeight = 382
+    ClientWidth = 170
+    TabOrder = 1
+    object BtnMedecin: TButton
+      Left = 1
+      Height = 47
+      Top = 1
+      Width = 168
+      Align = alTop
+      Caption = 'BtnMedecin'
+      TabOrder = 0
+      OnClick = BtnMedecinClick
+    end
+  end
+  object PnlWork: TPanel
+    Left = 170
+    Height = 382
+    Top = 50
+    Width = 790
+    Align = alClient
+    TabOrder = 2
+  end
+  object PnlFooter: TPanel
+    Left = 0
+    Height = 50
+    Top = 432
+    Width = 960
+    Align = alBottom
+    TabOrder = 3
+  end
+end

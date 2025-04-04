@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="Projet_Demo.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="23"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Principale/uprincipale.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmPrincipale"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uPrincipale"/>
+        <TopLine Value="24"/>
+        <CursorPos X="50" Y="41"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="DM/udm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="uDM"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="30"/>
+        <CursorPos X="2" Y="38"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmMedecin"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uMedecin"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="66"/>
+        <CursorPos X="9" Y="69"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="29">
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="43" Column="42" TopLine="34"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="42" Column="42" TopLine="33"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="41" Column="42" TopLine="32"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="43" Column="42" TopLine="34"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="45" Column="42" TopLine="36"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="46" Column="42" TopLine="37"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="47" Column="42" TopLine="38"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="48" Column="42" TopLine="39"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="49" Column="42" TopLine="40"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="50" Column="42" TopLine="41"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="51" Column="42" TopLine="42"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="52" Column="42" TopLine="43"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="53" Column="42" TopLine="44"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="54" Column="42" TopLine="45"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="53" Column="42" TopLine="44"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="54" Column="42" TopLine="45"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="53" Column="42" TopLine="44"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="54" Column="42" TopLine="44"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="82" Column="32" TopLine="62"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="76" Column="46" TopLine="64"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="72" Column="3" TopLine="65"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="87" Column="43" TopLine="68"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="95" Column="44" TopLine="85"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="126" Column="31" TopLine="120"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="120" Column="40" TopLine="118"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="124" Column="12" TopLine="122"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="122" Column="26" TopLine="77"/>
+      </Position>
+      <Position>
+        <Filename Value="DM/udm.pas"/>
+        <Caret Line="22" Column="49" TopLine="16"/>
+      </Position>
+      <Position>
+        <Filename Value="DM/udm.pas"/>
+        <Caret Line="37" Column="3" TopLine="24"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="84" Column="66" TopLine="76"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

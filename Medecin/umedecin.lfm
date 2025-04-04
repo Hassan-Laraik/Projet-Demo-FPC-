@@ -1,0 +1,242 @@
+object FrmMedecin: TFrmMedecin
+  Left = 41
+  Height = 494
+  Top = 173
+  Width = 1026
+  Caption = 'FrmMedecin'
+  ClientHeight = 494
+  ClientWidth = 1026
+  OnClose = FormClose
+  OnShow = FormShow
+  LCLVersion = '3.2.0.0'
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 494
+    Top = 0
+    Width = 1026
+    ActivePage = TabDetailMedecin
+    Align = alClient
+    TabIndex = 1
+    TabOrder = 0
+    object TabAllMedecin: TTabSheet
+      Caption = 'TabAllMedecin'
+      ClientHeight = 464
+      ClientWidth = 1016
+      object Panel2: TPanel
+        Left = 0
+        Height = 34
+        Top = 430
+        Width = 1016
+        Align = alBottom
+        Caption = 'Panel2'
+        ClientHeight = 34
+        ClientWidth = 1016
+        TabOrder = 0
+        object BtnSupprimer: TButton
+          Left = 707
+          Height = 32
+          Top = 1
+          Width = 163
+          Align = alRight
+          Caption = 'BtnSupprimer'
+          TabOrder = 0
+        end
+        object BtnModifier: TButton
+          Left = 544
+          Height = 32
+          Top = 1
+          Width = 163
+          Align = alRight
+          Caption = 'BtnModifier'
+          TabOrder = 1
+          OnClick = BtnModifierClick
+        end
+        object BtnNouveau: TButton
+          Left = 381
+          Height = 32
+          Top = 1
+          Width = 163
+          Align = alRight
+          Caption = 'BtnNouveau'
+          TabOrder = 2
+          OnClick = BtnNouveauClick
+        end
+        object BtnFermer: TButton
+          Left = 870
+          Height = 32
+          Top = 1
+          Width = 145
+          Align = alRight
+          Caption = 'BtnFermer'
+          TabOrder = 3
+          OnClick = BtnFermerClick
+        end
+      end
+      object Panel1: TPanel
+        Left = 0
+        Height = 32
+        Top = 0
+        Width = 1016
+        Align = alTop
+        Caption = 'Panel1'
+        ClientHeight = 32
+        ClientWidth = 1016
+        TabOrder = 1
+        object BtnRechercher: TButton
+          Left = 560
+          Height = 30
+          Top = 1
+          Width = 152
+          Align = alLeft
+          Caption = 'BtnRechercher'
+          TabOrder = 0
+        end
+        object EdtName: TEdit
+          Left = 1
+          Height = 30
+          Top = 1
+          Width = 559
+          Align = alLeft
+          TabOrder = 1
+        end
+      end
+      object GridMedecin: TDBGrid
+        Left = 0
+        Height = 398
+        Top = 32
+        Width = 1016
+        Align = alClient
+        AutoFillColumns = True
+        Color = clWindow
+        Columns = <>
+        DataSource = DataModule1.DSMedecin
+        TabOrder = 2
+      end
+    end
+    object TabDetailMedecin: TTabSheet
+      Caption = 'TabDetailMedecin'
+      ClientHeight = 464
+      ClientWidth = 1016
+      object EdtCinMedecin: TEdit
+        Left = 257
+        Height = 33
+        Top = 56
+        Width = 455
+        TabOrder = 0
+      end
+      object EdtNom: TEdit
+        Left = 252
+        Height = 33
+        Top = 108
+        Width = 460
+        TabOrder = 1
+      end
+      object EdtPrenom: TEdit
+        Left = 257
+        Height = 33
+        Top = 160
+        Width = 455
+        TabOrder = 2
+      end
+      object EdtAdresse: TEdit
+        Left = 252
+        Height = 33
+        Top = 212
+        Width = 460
+        TabOrder = 3
+      end
+      object EdtGSM: TEdit
+        Left = 257
+        Height = 33
+        Top = 272
+        Width = 455
+        MaxLength = 10
+        NumbersOnly = True
+        TabOrder = 4
+      end
+      object edtEmail: TEdit
+        Left = 252
+        Height = 33
+        Top = 324
+        Width = 460
+        TabOrder = 5
+      end
+      object Label1: TLabel
+        Left = 120
+        Height = 16
+        Top = 64
+        Width = 73
+        Caption = 'Cin Medecin'
+      end
+      object Label2: TLabel
+        Left = 120
+        Height = 16
+        Top = 104
+        Width = 29
+        Caption = 'Nom'
+      end
+      object Label3: TLabel
+        Left = 120
+        Height = 16
+        Top = 168
+        Width = 47
+        Caption = 'Prenom'
+      end
+      object Label4: TLabel
+        Left = 120
+        Height = 16
+        Top = 216
+        Width = 48
+        Caption = 'Adresse'
+      end
+      object Label5: TLabel
+        Left = 120
+        Height = 16
+        Top = 280
+        Width = 28
+        Caption = 'GSM'
+      end
+      object Label6: TLabel
+        Left = 116
+        Height = 16
+        Top = 329
+        Width = 33
+        Caption = 'Email'
+      end
+      object Panel3: TPanel
+        Left = 0
+        Height = 40
+        Top = 424
+        Width = 1016
+        Align = alBottom
+        Caption = 'Panel3'
+        ClientHeight = 40
+        ClientWidth = 1016
+        TabOrder = 6
+        object BtnValider: TButton
+          Left = 880
+          Height = 38
+          Top = 1
+          Width = 135
+          Align = alRight
+          Caption = 'BtnValider'
+          TabOrder = 0
+          OnClick = BtnValiderClick
+        end
+        object BtnAnnuler: TButton
+          Left = 745
+          Height = 38
+          Top = 1
+          Width = 135
+          Align = alRight
+          Caption = 'BtnAnnuler'
+          TabOrder = 1
+          OnClick = BtnAnnulerClick
+        end
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'TabSheet3'
+    end
+  end
+end
