@@ -14,9 +14,9 @@ object FrmMedecin: TFrmMedecin
     Height = 494
     Top = 0
     Width = 1026
-    ActivePage = TabAllMedecin
+    ActivePage = TabDetailMedecin
     Align = alClient
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 0
     object TabAllMedecin: TTabSheet
       Caption = 'TabAllMedecin'
@@ -131,6 +131,8 @@ object FrmMedecin: TFrmMedecin
         Top = 108
         Width = 460
         TabOrder = 1
+        OnEditingDone = EdtNomEditingDone
+        OnKeyUp = EdtNomKeyUp
       end
       object EdtPrenom: TEdit
         Left = 257
@@ -138,6 +140,7 @@ object FrmMedecin: TFrmMedecin
         Top = 160
         Width = 455
         TabOrder = 2
+        OnEditingDone = EdtPrenomEditingDone
       end
       object EdtAdresse: TEdit
         Left = 252

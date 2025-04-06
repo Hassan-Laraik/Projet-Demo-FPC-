@@ -47,6 +47,9 @@ type
     procedure BtnNouveauClick(Sender: TObject);
     procedure BtnRechercherClick(Sender: TObject);
     procedure BtnValiderClick(Sender: TObject);
+    procedure EdtNomEditingDone(Sender: TObject);
+    procedure EdtNomKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure EdtPrenomEditingDone(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormShow(Sender: TObject);
   private
@@ -117,29 +120,44 @@ begin
        EdtCinMedecin.SetFocus;
      exit;
    end;
-   if TRIM(EdtNom.text) = '' then
+   //if TRIM(EdtNom.text) = '' then
+   //begin
+   //   ShowMessage('Nom Medecin Obligatoire !');
+   //    EdtNom.SetFocus;
+   //  exit;
+   //end;
+   //if Length(TRIM(EdtNom.text))< 3 then
+   //begin
+   //   ShowMessage('Nom Medecin Doit avoir au minimum   3 caracteres !');
+   //    EdtNom.SetFocus;
+   //  exit;
+   //end;
+
+   if  not uValidation.IsValidName(EdtNom.text) then
    begin
-      ShowMessage('Nom Medecin Obligatoire !');
+     ShowMessage('Nom Medecin Doit avoir au minimum   3 caracteres seulement des lettres et les espaces !');
        EdtNom.SetFocus;
-     exit;
+       exit;
    end;
-   if Length(TRIM(EdtNom.text))< 3 then
+
+   // if TRIM(EdtPrenom.text) = '' then
+   //begin
+   //   ShowMessage('Prenom Medecin Obligatoire !');
+   //    EdtPrenom.SetFocus;
+   //  exit;
+   //end;
+   // if Length(TRIM(EdtPrenom.text))< 3 then
+   //begin
+   //   ShowMessage('Prenom Medecin Doit avoir au minimum  3 caracteres !');
+   //    EdtPrenom.SetFocus;
+   //  exit;
+   //end;
+
+    if  not uValidation.IsValidName(EdtPrenom.text) then
    begin
-      ShowMessage('Nom Medecin Doit avoir au minimum   3 caracteres !');
-       EdtNom.SetFocus;
-     exit;
-   end;
-    if TRIM(EdtPrenom.text) = '' then
-   begin
-      ShowMessage('Prenom Medecin Obligatoire !');
+     ShowMessage('Prenom Medecin Doit avoir au minimum   3 caracteres seulement des lettres et les espaces !');
        EdtPrenom.SetFocus;
-     exit;
-   end;
-   if Length(TRIM(EdtPrenom.text))< 3 then
-   begin
-      ShowMessage('Prenom Medecin Doit avoir au minimum  3 caracteres !');
-       EdtPrenom.SetFocus;
-     exit;
+       exit;
    end;
 
    // if     (Length(trim(EdtGSM.Text))> 0)
@@ -192,6 +210,21 @@ begin
   PageControl1.ActivePage:=TabAllMedecin;
 end;
 
+ procedure TFrmMedecin.EdtNomEditingDone(Sender: TObject);
+begin
+  EdtNom.text := AnsiUpperCase(Copy(EdtNom.text, 1, 1)) + AnsiLowerCase(Copy(EdtNom.text, 2, Length(EdtNom.text) - 1));
+end;
+
+ procedure TFrmMedecin.EdtNomKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+
+end;
+
+ procedure TFrmMedecin.EdtPrenomEditingDone(Sender: TObject);
+begin
+  EdtPrenom.text := AnsiUpperCase(Copy(EdtPrenom.text, 1, 1)) + AnsiLowerCase(Copy(EdtPrenom.text, 2, Length(EdtPrenom.text) - 1));
+end;
+
  procedure TFrmMedecin.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
     CloseAction :=  TCloseAction.caFree;
@@ -205,20 +238,6 @@ begin
   PageControl1.ShowTabs:= False;
 end;
 
- //function TFrmMedecin.IsValidEmail( const S: string): Boolean;
- //  const
- //   EMAIL_REGEX = '^[\w\.-]+@[\w\.-]+\.\w{2,}$';
- // var
- //   RegEx: TRegExpr;
- // begin
- //   RegEx := TRegExpr.Create;
- //   try
- //     RegEx.Expression := EMAIL_REGEX;
- //     Result := RegEx.Exec(S);  // Retourne True si l'email correspond
- //   finally
- //     RegEx.Free;
- //   end;
- //end;
 
 
 end.
