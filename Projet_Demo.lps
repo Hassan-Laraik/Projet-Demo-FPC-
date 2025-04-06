@@ -11,7 +11,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="30"/>
+        <UsageCount Value="31"/>
       </Unit>
       <Unit>
         <Filename Value="Principale/uprincipale.pas"/>
@@ -22,7 +22,7 @@
         <UnitName Value="uPrincipale"/>
         <TopLine Value="23"/>
         <CursorPos X="28" Y="45"/>
-        <UsageCount Value="30"/>
+        <UsageCount Value="31"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -33,11 +33,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="uDM"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="94"/>
-        <CursorPos X="89" Y="98"/>
-        <UsageCount Value="30"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="2" Y="111"/>
+        <FoldState Value=" T3i01N2 PUi81-"/>
+        <UsageCount Value="31"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -49,26 +48,25 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uMedecin"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="100"/>
-        <CursorPos X="3" Y="103"/>
-        <UsageCount Value="30"/>
+        <TopLine Value="148"/>
+        <CursorPos X="86" Y="149"/>
+        <UsageCount Value="31"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="Outils/uvalidation.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uValidation"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="13"/>
+        <CursorPos X="33" Y="3"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="Medecin/umedecin.pas"/>
-        <Caret Line="80" Column="37" TopLine="74"/>
-      </Position>
-      <Position>
-        <Filename Value="Medecin/umedecin.pas"/>
-        <Caret Line="78" Column="28" TopLine="74"/>
-      </Position>
-      <Position>
-        <Filename Value="DM/udm.pas"/>
-        <Caret Line="61" Column="83" TopLine="44"/>
-      </Position>
       <Position>
         <Filename Value="DM/udm.pas"/>
         <Caret Line="82" Column="39" TopLine="72"/>
@@ -176,6 +174,18 @@
       <Position>
         <Filename Value="DM/udm.pas"/>
         <Caret Line="25" Column="14" TopLine="16"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="82" Column="3" TopLine="71"/>
+      </Position>
+      <Position>
+        <Filename Value="Medecin/umedecin.pas"/>
+        <Caret Line="155" Column="13" TopLine="142"/>
+      </Position>
+      <Position>
+        <Filename Value="Outils/uvalidation.pas"/>
+        <Caret Line="21" Column="25" TopLine="8"/>
       </Position>
     </JumpHistory>
     <RunParams>

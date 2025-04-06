@@ -52,7 +52,7 @@ type
   private
     const
     //EMAIL_REGEX = '^[\w\.-]+@[\w\.-]+\.\w{2,}$';
-      function IsValidEmail(const S: string): Boolean;
+      //function IsValidEmail(const S: string): Boolean;
   public
 
   end;
@@ -61,7 +61,7 @@ var
   FrmMedecin: TFrmMedecin;
 
 implementation
-   uses uDM;
+   uses uDM,uValidation;
 {$R *.lfm}
 
    { TFrmMedecin }
@@ -142,17 +142,24 @@ begin
      exit;
    end;
 
-    if     (Length(trim(EdtGSM.Text))> 0)
-           and
-           (Length(trim(EdtGSM.Text))<10)
-   then
+   // if     (Length(trim(EdtGSM.Text))> 0)
+   //        and
+   //        (Length(trim(EdtGSM.Text))<10)
+   //then
+   //begin
+   //   ShowMessage('GSM Medecin Incorrecte !');
+   //    EdtGSM.SetFocus;
+   //  exit;
+   //end;
+
+   if not uValidation.IsValidPhoneNumber(EdtGSM.Text,10) then
    begin
-      ShowMessage('GSM Medecin Incorrecte !');
-       EdtGSM.SetFocus;
+       ShowMessage('GSM Medecin Incorrecte !');
+      EdtGSM.SetFocus;
      exit;
    end;
 
-   if not IsValidEmail(edtEmail.Text) then
+   if not uValidation.IsValidEmail(edtEmail.Text) then
    begin
       ShowMessage('Adresse email invalide');
        edtEmail.SetFocus;
@@ -198,20 +205,20 @@ begin
   PageControl1.ShowTabs:= False;
 end;
 
- function TFrmMedecin.IsValidEmail( const S: string): Boolean;
-   const
-    EMAIL_REGEX = '^[\w\.-]+@[\w\.-]+\.\w{2,}$';
-  var
-    RegEx: TRegExpr;
-  begin
-    RegEx := TRegExpr.Create;
-    try
-      RegEx.Expression := EMAIL_REGEX;
-      Result := RegEx.Exec(S);  // Retourne True si l'email correspond
-    finally
-      RegEx.Free;
-    end;
- end;
+ //function TFrmMedecin.IsValidEmail( const S: string): Boolean;
+ //  const
+ //   EMAIL_REGEX = '^[\w\.-]+@[\w\.-]+\.\w{2,}$';
+ // var
+ //   RegEx: TRegExpr;
+ // begin
+ //   RegEx := TRegExpr.Create;
+ //   try
+ //     RegEx.Expression := EMAIL_REGEX;
+ //     Result := RegEx.Exec(S);  // Retourne True si l'email correspond
+ //   finally
+ //     RegEx.Free;
+ //   end;
+ //end;
 
 
 end.

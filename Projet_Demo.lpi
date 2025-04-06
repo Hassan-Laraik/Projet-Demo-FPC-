@@ -66,6 +66,11 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uMedecin"/>
       </Unit>
+      <Unit>
+        <Filename Value="Outils/uvalidation.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uValidation"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -75,7 +80,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="Principale;DM;Medecin"/>
+      <OtherUnitFiles Value="Principale;DM;Medecin;Outils"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>
