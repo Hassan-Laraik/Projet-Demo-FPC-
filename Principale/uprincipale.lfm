@@ -1,7 +1,7 @@
 object FrmPrincipale: TFrmPrincipale
-  Left = 119
+  Left = 84
   Height = 482
-  Top = 201
+  Top = 180
   Width = 960
   Caption = 'FrmPrincipale'
   ClientHeight = 482

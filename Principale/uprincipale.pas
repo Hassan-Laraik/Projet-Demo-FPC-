@@ -41,7 +41,8 @@ implementation
    FrmMedecin.Parent := PnlWork;
    FrmMedecin.Align:=TAlign.alClient;
 
-   FrmMedecin.ShowModal;
+   FrmMedecin.Show;
+   FrmMedecin.BringToFront;
   end;
 
 

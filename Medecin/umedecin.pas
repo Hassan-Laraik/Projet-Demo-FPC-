@@ -5,7 +5,8 @@
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, ComCtrls, DBGrids;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, ComCtrls, DBGrids,
+   RegExpr;
 
 type
 
@@ -26,7 +27,7 @@ type
     EdtGSM: TEdit;
     edtEmail: TEdit;
     GridMedecin: TDBGrid;
-    EdtName: TEdit;
+    EdtRechercher: TEdit;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -44,11 +45,14 @@ type
     procedure BtnFermerClick(Sender: TObject);
     procedure BtnModifierClick(Sender: TObject);
     procedure BtnNouveauClick(Sender: TObject);
+    procedure BtnRechercherClick(Sender: TObject);
     procedure BtnValiderClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormShow(Sender: TObject);
   private
-
+    const
+    //EMAIL_REGEX = '^[\w\.-]+@[\w\.-]+\.\w{2,}$';
+      function IsValidEmail(const S: string): Boolean;
   public
 
   end;
@@ -74,14 +78,29 @@ end;
 
  procedure TFrmMedecin.BtnModifierClick(Sender: TObject);
 begin
+  BtnValider.Tag:=1;
+  EdtCinMedecin.Enabled:=false;
+  EdtCinMedecin.Text:=DataModule1.RecupererChampMedecin('CINmedecin');
+  EdtNom.Text:=DataModule1.RecupererChampMedecin('nomMedecin');
+  EdtPrenom.Text:=DataModule1.RecupererChampMedecin('prenomMedcin');
+  EdtGSM.Text:=DataModule1.RecupererChampMedecin('gsmMedecin');
+  edtEmail.Text:=DataModule1.RecupererChampMedecin('emailMedecinl');
+  EdtAdresse.Text:=DataModule1.RecupererChampMedecin('adresseMedecin');
   PageControl1.ActivePage:=TabDetailMedecin;
 end;
 
  procedure TFrmMedecin.BtnNouveauClick(Sender: TObject);
 begin
+  BtnValider.Tag:=0;
+  EdtCinMedecin.Enabled:=True;
   EdtCinMedecin.clear;EdtNom.clear;EdtPrenom.Clear;EdtGSM.Clear;
   edtEmail.Clear;EdtAdresse.clear;
   PageControl1.ActivePage:=TabDetailMedecin;
+end;
+
+ procedure TFrmMedecin.BtnRechercherClick(Sender: TObject);
+begin
+  DataModule1.FiltrerMedecins(EdtRechercher.Text);
 end;
 
  procedure TFrmMedecin.BtnValiderClick(Sender: TObject);
@@ -133,13 +152,36 @@ begin
      exit;
    end;
 
-    DataModule1.AjouterMedecin(EdtCinMedecin.text,
+   if not IsValidEmail(edtEmail.Text) then
+   begin
+      ShowMessage('Adresse email invalide');
+       edtEmail.SetFocus;
+     exit;
+   end;
+
+    case BtnValider.Tag of
+      0: begin
+             if  DataModule1.AjouterMedecin(EdtCinMedecin.text,
                                EdtNom.text,
                                EdtPrenom.text,
                                EdtAdresse.text,
                                EdtGSM.Text,
-                               edtEmail.Text);
-
+                               edtEmail.Text) then ShowMessage('Operation Ajout Effectuée');
+              PageControl1.ActivePage:=TabAllMedecin;
+              exit;
+        end;
+      1: begin
+             if  DataModule1.ModifierMedecin(EdtCinMedecin.text,
+                               EdtNom.text,
+                               EdtPrenom.text,
+                               EdtAdresse.text,
+                               EdtGSM.Text,
+                               edtEmail.Text) then
+              ShowMessage('Operation Modification Effectuée');
+              PageControl1.ActivePage:=TabAllMedecin;
+              exit;
+        end;
+    end;
   PageControl1.ActivePage:=TabAllMedecin;
 end;
 
@@ -155,6 +197,22 @@ begin
   PageControl1.ActivePage:=TabAllMedecin;
   PageControl1.ShowTabs:= False;
 end;
+
+ function TFrmMedecin.IsValidEmail( const S: string): Boolean;
+   const
+    EMAIL_REGEX = '^[\w\.-]+@[\w\.-]+\.\w{2,}$';
+  var
+    RegEx: TRegExpr;
+  begin
+    RegEx := TRegExpr.Create;
+    try
+      RegEx.Expression := EMAIL_REGEX;
+      Result := RegEx.Exec(S);  // Retourne True si l'email correspond
+    finally
+      RegEx.Free;
+    end;
+ end;
+
 
 end.
 
