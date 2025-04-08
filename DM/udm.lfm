@@ -38,7 +38,23 @@ object DataModule1: TDataModule1
   object ZqryCRUD: TZQuery
     Connection = ZNX
     Params = <>
-    Left = 360
-    Top = 40
+    Left = 496
+    Top = 32
+  end
+  object ZqryPatient: TZQuery
+    Connection = ZNX
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM patients'
+      ''
+    )
+    Params = <>
+    Left = 152
+    Top = 120
+  end
+  object DSPatient: TDataSource
+    DataSet = ZqryPatient
+    Left = 144
+    Top = 200
   end
 end

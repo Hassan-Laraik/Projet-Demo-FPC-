@@ -1,4 +1,4 @@
-  unit uMedecin;
+  unit umedecin;
 
 {$mode ObjFPC}{$H+}
 

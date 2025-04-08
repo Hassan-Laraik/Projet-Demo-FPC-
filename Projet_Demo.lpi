@@ -64,7 +64,14 @@
         <ComponentName Value="FrmMedecin"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="uMedecin"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Patients/upatient.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmPatient"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uPatient"/>
       </Unit>
       <Unit>
         <Filename Value="Outils/uvalidation.pas"/>
@@ -80,7 +87,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="Principale;DM;Medecin;Outils"/>
+      <OtherUnitFiles Value="Principale;DM;Medecin;Outils;Patients"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>
