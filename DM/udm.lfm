@@ -1,8 +1,8 @@
 object DataModule1: TDataModule1
   OldCreateOrder = False
   Height = 310
-  HorizontalOffset = 98
-  VerticalOffset = 177
+  HorizontalOffset = 97
+  VerticalOffset = 176
   Width = 563
   object ZNX: TZConnection
     ControlsCodePage = cCP_UTF8

@@ -20,6 +20,7 @@ type
     BtnRechercher: TButton;
     BtnValider: TButton;
     BtnAnnuler: TButton;
+    Button1: TButton;
     EdtCinMedecin: TEdit;
     EdtNom: TEdit;
     EdtPrenom: TEdit;
@@ -47,6 +48,7 @@ type
     procedure BtnNouveauClick(Sender: TObject);
     procedure BtnRechercherClick(Sender: TObject);
     procedure BtnValiderClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
     procedure EdtNomEditingDone(Sender: TObject);
     procedure EdtNomKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure EdtPrenomEditingDone(Sender: TObject);
@@ -133,9 +135,9 @@ begin
    //  exit;
    //end;
 
-   if  not uValidation.IsValidName(EdtNom.text) then
+   if  not uValidation.IsValidNameVide(EdtNom.text,2) then
    begin
-     ShowMessage('Nom Medecin Doit avoir au minimum   3 caracteres seulement des lettres et les espaces !');
+     ShowMessage('Nom Medecin Doit avoir au minimum   2 caracteres seulement des lettres et les espaces !');
        EdtNom.SetFocus;
        exit;
    end;
@@ -153,9 +155,9 @@ begin
    //  exit;
    //end;
 
-    if  not uValidation.IsValidName(EdtPrenom.text) then
+    if  not uValidation.IsValidNameVide(EdtPrenom.text,2) then
    begin
-     ShowMessage('Prenom Medecin Doit avoir au minimum   3 caracteres seulement des lettres et les espaces !');
+     ShowMessage('Prenom Medecin Doit avoir au minimum 2 caracteres seulement des lettres et les espaces !');
        EdtPrenom.SetFocus;
        exit;
    end;
@@ -210,19 +212,64 @@ begin
   PageControl1.ActivePage:=TabAllMedecin;
 end;
 
- procedure TFrmMedecin.EdtNomEditingDone(Sender: TObject);
-begin
-  EdtNom.text := AnsiUpperCase(Copy(EdtNom.text, 1, 1)) + AnsiLowerCase(Copy(EdtNom.text, 2, Length(EdtNom.text) - 1));
+ procedure TFrmMedecin.Button1Click(Sender: TObject);
+ var
+   Valid: Boolean;
+ begin
+   // Vérifier un numéro de téléphone
+   Valid := IsValidNumber('0612345678', 'Phone');
+   if valid then ShowMessage('phone true')else ShowMessage('phone false');
+
+   // Vérifier une date
+   Valid := IsValidNumber('2025-04-07', 'Date');
+   if valid then ShowMessage('Date true')else ShowMessage('Date false');
+
+   // Vérifier un nom avec min 3 caractères
+   Valid := IsValidNumber('Ali', 'Name', 3);
+   if valid then ShowMessage('Name true')else ShowMessage('Name false');
+   // Vérifier un email
+   Valid := IsValidNumber('example@test.com', 'Email');
+   if valid then ShowMessage('Elail true')else ShowMessage('Elail false');
+
+   // Vérifier un CIN Marocain
+   Valid := IsValidNumber('AB123456', 'CIN');
+   if valid then ShowMessage('CIN true')else ShowMessage('CIN false');
+
+   // Vérifier un code postal
+   Valid := IsValidNumber('23000', 'PostalCode');
+
+   if valid then ShowMessage('Postal true')else ShowMessage('Postal false');
+
 end;
 
- procedure TFrmMedecin.EdtNomKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+ procedure TFrmMedecin.EdtNomEditingDone(Sender: TObject);
+begin
+  //EdtNom.text := AnsiUpperCase(Copy(EdtNom.text, 1, 1)) + AnsiLowerCase(Copy(EdtNom.text, 2, Length(EdtNom.text) - 1));
+  EdtNom.text := uValidation.CapitaliseParMot(EdtNom.Text);
+   if  not uValidation.IsValidNameVide(EdtNom.text,2) then
+   begin
+     ShowMessage('Nom Medecin Doit avoir au minimum 2 caracteres seulement des lettres et les espaces !');
+       EdtNom.SetFocus;
+       exit;
+   end;
+
+end;
+
+procedure TFrmMedecin.EdtNomKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
 begin
 
 end;
 
  procedure TFrmMedecin.EdtPrenomEditingDone(Sender: TObject);
 begin
-  EdtPrenom.text := AnsiUpperCase(Copy(EdtPrenom.text, 1, 1)) + AnsiLowerCase(Copy(EdtPrenom.text, 2, Length(EdtPrenom.text) - 1));
+  //EdtPrenom.text := AnsiUpperCase(Copy(EdtPrenom.text, 1, 1)) + AnsiLowerCase(Copy(EdtPrenom.text, 2, Length(EdtPrenom.text) - 1));
+ EdtPrenom.text := uValidation.CapitaliseParMot(EdtPrenom.text);
+ if  not uValidation.IsValidNameVide(EdtPrenom.text,2) then
+   begin
+     ShowMessage('Prenom Medecin Doit avoir au minimum 2 caracteres seulement des lettres et les espaces !');
+       EdtPrenom.SetFocus;
+       exit;
+   end;
 end;
 
  procedure TFrmMedecin.FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -237,8 +284,6 @@ begin
   PageControl1.ActivePage:=TabAllMedecin;
   PageControl1.ShowTabs:= False;
 end;
-
-
 
 end.
 

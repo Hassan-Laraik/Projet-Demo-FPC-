@@ -24,8 +24,8 @@ type
     function ModifierMedecin(cin, nom, prenom, adresse, gsm, email: string): boolean;
     function FiltrerMedecins(clause : string):Boolean;
     function RecupererChampMedecin(champ : string):string;overload;
-    function RecupererChampMedecin(champ : string):TDatetime;overload;
-    function RecupererChampMedecin(champ : string):Double;overload;
+    //function RecupererChampMedecin(champ : string):TDatetime;overload;
+    //function RecupererChampMedecin(champ : string):Double;overload;
 
 
   end;
@@ -104,15 +104,15 @@ end;
   result := ZqryMedecin.FieldByName(champ).AsString;
  end;
 
- function TDataModule1.RecupererChampMedecin(champ: string): TdateTime;
- begin
-  result := date;
- end;
-
- function TDataModule1.RecupererChampMedecin(champ: string): Double;
- begin
-   result:=0.0;
- end;
+ //function TDataModule1.RecupererChampMedecin(champ: string): TdateTime;
+ //begin
+ // result := ZqryMedecin.FieldByName(champ).AsDateTime;
+ //end;
+ //
+ //function TDataModule1.RecupererChampMedecin(champ: string): Double;
+ //begin
+ //  result:=ZqryMedecin.FieldByName(champ).AsFloat;
+ //end;
 
 function TDataModule1.SiExiste(const TableName, FieldName, Value: string): Boolean;
 begin
